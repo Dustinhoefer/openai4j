@@ -16,7 +16,7 @@ import lombok.NoArgsConstructor;
 public class Audio {
 
     /**
-     * The voice the model uses to respond. Supported voices are alloy, ash, ballad, coral, echo, sage, shimmer, and verse.
+     * The voice the model uses to respond. Supported voices are alloy, ash, coral, echo, sage, shimmer, and verse.
      */
     String voice;
 
