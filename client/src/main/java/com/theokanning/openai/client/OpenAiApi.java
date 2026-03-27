@@ -50,6 +50,7 @@ import retrofit2.Call;
 import retrofit2.http.*;
 
 import java.time.LocalDate;
+import java.util.Collections;
 import java.util.Map;
 
 public interface OpenAiApi {
@@ -86,7 +87,11 @@ public interface OpenAiApi {
     Single<File> uploadFile(@Part("purpose") RequestBody purpose, @Part MultipartBody.Part file);
 
     @GET("files")
-    Single<OpenAiResponse<File>> listFiles();
+    Single<OpenAiResponse<File>> listFiles(@QueryMap Map<String, Object> filterRequest);
+
+    default Single<OpenAiResponse<File>> listFiles() {
+        return listFiles(Collections.emptyMap());
+    }
 
     @DELETE("files/{file_id}")
     Single<DeleteResult> deleteFile(@Path("file_id") String fileId);
