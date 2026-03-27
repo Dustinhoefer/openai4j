@@ -5,6 +5,7 @@ import com.theokanning.openai.OpenAiError;
 import lombok.Data;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * Fine-tuning job
@@ -95,6 +96,16 @@ public class FineTuningJob {
      * A list of integrations to enable for this fine-tuning job.
      */
     List<Integrations> integrations;
+
+    /**
+     * Optional metadata attached to the fine-tuning job.
+     */
+    Map<String, String> metadata;
+
+    /**
+     * Fine-tuning method details (supervised, dpo, reinforcement).
+     */
+    Object method;
 
     /**
      * The seed controls the reproducibility of the job. Passing in the same seed and job parameters should produce the same results, but may differ in rare cases. If a seed is not specified, one will be generated for you.
