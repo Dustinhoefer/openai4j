@@ -54,4 +54,32 @@ public class CreateTranscriptionRequest {
     @JsonProperty("timestamp_granularities")
     List<String> timestampGranularities;
 
+    /**
+     * If true, stream transcript delta events.
+     */
+    Boolean stream;
+
+    /**
+     * Additional response parts, e.g. ["logprobs"].
+     */
+    List<String> include;
+
+    /**
+     * Strategy for chunking long audio inputs.
+     */
+    @JsonProperty("chunking_strategy")
+    Object chunkingStrategy;
+
+    /**
+     * Optional known speaker names for diarization models.
+     */
+    @JsonProperty("known_speaker_names")
+    List<String> knownSpeakerNames;
+
+    /**
+     * Optional known speaker references for diarization models.
+     */
+    @JsonProperty("known_speaker_references")
+    List<String> knownSpeakerReferences;
+
 }
