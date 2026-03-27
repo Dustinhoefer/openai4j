@@ -33,6 +33,12 @@ public class File {
     Long createdAt;
 
     /**
+     * The unix timestamp (in seconds) for when the file will expire.
+     */
+    @JsonProperty("expires_at")
+    Long expiresAt;
+
+    /**
      * The name of the file.
      */
     String filename;
