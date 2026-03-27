@@ -3,6 +3,9 @@ package com.theokanning.openai.moderation;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 
+import java.util.List;
+import java.util.Map;
+
 /**
  * An object containing the moderation data for a single input string
  *
@@ -29,4 +32,10 @@ public class Moderation {
      */
     @JsonProperty("category_scores")
     public ModerationCategoryScores categoryScores;
+
+    /**
+     * Per-category input modalities for which the category score applies.
+     */
+    @JsonProperty("category_applied_input_types")
+    public Map<String, List<String>> categoryAppliedInputTypes;
 }
