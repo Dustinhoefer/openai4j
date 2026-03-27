@@ -10,6 +10,7 @@ import lombok.*;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 @Builder
 @NoArgsConstructor
@@ -82,5 +83,10 @@ public class AssistantRequest {
     @JsonDeserialize(using = ChatResponseFormat.ChatResponseFormatDeserializer.class)
 
     ChatResponseFormat responseFormat;
+
+    /**
+     * Set of 16 key-value pairs that can be attached to an object.
+     */
+    Map<String, String> metadata;
 
 }
