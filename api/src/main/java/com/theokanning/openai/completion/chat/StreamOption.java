@@ -14,9 +14,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class StreamOption {
 
-    public static final StreamOption INCLUDE = new StreamOption(true);
+    public static final StreamOption INCLUDE = new StreamOption(true, null);
 
-    public static final StreamOption EXCLUDE = new StreamOption(false);
+    public static final StreamOption EXCLUDE = new StreamOption(false, null);
     /**
      * If set, an additional chunk will be streamed before the data: [DONE] message.
      * The usage field on this chunk shows the token usage statistics for the entire request, and the choices field will always be an empty array.
@@ -24,5 +24,11 @@ public class StreamOption {
      */
     @JsonProperty("include_usage")
     Boolean includeUsage;
+
+    /**
+     * Enables obfuscation payloads in stream deltas. Defaults to true server-side.
+     */
+    @JsonProperty("include_obfuscation")
+    Boolean includeObfuscation;
 
 }
