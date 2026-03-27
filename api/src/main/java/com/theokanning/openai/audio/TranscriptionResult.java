@@ -43,4 +43,14 @@ public class TranscriptionResult {
 
     List<Words> words;
 
+    /**
+     * Token-level log probabilities when requested.
+     */
+    List<Object> logprobs;
+
+    /**
+     * Usage block returned by newer transcription models.
+     */
+    Object usage;
+
 }
