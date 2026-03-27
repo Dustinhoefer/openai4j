@@ -23,6 +23,11 @@ public class Model {
     public String object;
 
     /**
+     * Unix timestamp when the model was created.
+     */
+    public Long created;
+
+    /**
      * The owner of the model, typically "openai"
      */
     @JsonProperty("owned_by")
