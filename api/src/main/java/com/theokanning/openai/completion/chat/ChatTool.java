@@ -10,7 +10,15 @@ import lombok.NonNull;
 @AllArgsConstructor
 public class ChatTool {
     public ChatTool(@NonNull Object function) {
+        this.type = "function";
         this.function = function;
+    }
+
+    public static ChatTool customTool(@NonNull Object custom) {
+        ChatTool tool = new ChatTool();
+        tool.type = "custom";
+        tool.custom = custom;
+        return tool;
     }
 
     /**
@@ -24,10 +32,10 @@ public class ChatTool {
      * recommend use {@link com.theokanning.openai.function.FunctionDefinition} .
      * also you can customer your own function
      */
-    @NonNull
     private Object function;
 
-
-
-
+    /**
+     * Custom tool definition, used when type is "custom".
+     */
+    private Object custom;
 }
