@@ -51,7 +51,7 @@ public class CreateTranscriptionRequest {
      * Either or both of these options are supported: word, or segment. <br>
      * Note: There is no additional latency for segment timestamps, but generating word timestamps incurs additional latency.
      */
-    @JsonProperty("timestamp_granularities ")
+    @JsonProperty("timestamp_granularities")
     List<String> timestampGranularities;
 
 }
