@@ -17,7 +17,7 @@ public class ModerationRequest {
      * The input text to classify.
      */
     @NonNull
-    String input;
+    Object input;
 
     /**
      * The name of the model to use, defaults to text-moderation-stable.
