@@ -86,6 +86,12 @@ public class ChatCompletionRequest {
     Integer maxTokens;
 
     /**
+     * Preferred max token control for chat completions, including reasoning tokens.
+     */
+    @JsonProperty("max_completion_tokens")
+    Integer maxCompletionTokens;
+
+    /**
      * Number between -2.0 and 2.0. Positive values penalize new tokens based on whether they appear in the text so far,
      * increasing the model's likelihood to talk about new topics.
      */
@@ -108,11 +114,67 @@ public class ChatCompletionRequest {
     @JsonProperty("logit_bias")
     Map<String, Integer> logitBias;
 
+    /**
+     * Additional metadata for this request.
+     */
+    Map<String, String> metadata;
+
+    /**
+     * Predicted output content to speed up near-regeneration requests.
+     */
+    Object prediction;
+
+    /**
+     * Prompt cache key used for caching similar requests.
+     */
+    @JsonProperty("prompt_cache_key")
+    String promptCacheKey;
+
+    /**
+     * Prompt cache retention policy, e.g. in-memory or 24h.
+     */
+    @JsonProperty("prompt_cache_retention")
+    String promptCacheRetention;
+
+    /**
+     * Constrains reasoning effort for reasoning-capable models.
+     */
+    @JsonProperty("reasoning_effort")
+    String reasoningEffort;
+
+    /**
+     * Stable identifier used for safety monitoring.
+     */
+    @JsonProperty("safety_identifier")
+    String safetyIdentifier;
+
+    /**
+     * Processing tier used to serve the request.
+     */
+    @JsonProperty("service_tier")
+    String serviceTier;
+
+    /**
+     * Whether to store this completion for distillation/evals products.
+     */
+    Boolean store;
+
 
     /**
      * A unique identifier representing your end-user, which will help OpenAI to monitor and detect abuse.
      */
     String user;
+
+    /**
+     * Constrains response verbosity where supported.
+     */
+    String verbosity;
+
+    /**
+     * Options for the built-in web search tool.
+     */
+    @JsonProperty("web_search_options")
+    Object webSearchOptions;
 
     /**
      * @since 0.20.5 {@link com.theokanning.openai.completion.chat.ChatFunction} {@link  com.theokanning.openai.completion.chat.ChatFunctionDynamic}will be deprecated
