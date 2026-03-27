@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
 
 import java.util.List;
+import java.util.Map;
 
 
 /**
@@ -41,12 +42,22 @@ public class FineTuningJobRequest {
     Hyperparameters hyperparameters;
 
     /**
+     * New fine-tuning method configuration (supervised, dpo, reinforcement).
+     */
+    Object method;
+
+    /**
      * A string of up to 40 characters that will be added to your fine-tuned model name.
      */
     String suffix;
 
 
     List<Integrations> integrations;
+
+    /**
+     * Set of key-value pairs attached to the fine-tuning job.
+     */
+    Map<String, String> metadata;
 
     /**
      * The seed controls the reproducibility of the job. Passing in the same seed and job parameters should produce the same results, but may differ in rare cases. If a seed is not specified, one will be generated for you.
