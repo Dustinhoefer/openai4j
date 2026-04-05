@@ -13,10 +13,6 @@
     <name>api</name>
     <description>Basic java objects for the OpenAI GPT APIs</description>
 
-    <properties>
-        <java.version>1.8</java.version>
-    </properties>
-
     <dependencies>
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
