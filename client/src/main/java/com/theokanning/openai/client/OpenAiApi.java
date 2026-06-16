@@ -30,6 +30,8 @@ import com.theokanning.openai.completion.CompletionRequest;
 import com.theokanning.openai.completion.CompletionResult;
 import com.theokanning.openai.completion.chat.ChatCompletionRequest;
 import com.theokanning.openai.completion.chat.ChatCompletionResult;
+import com.theokanning.openai.responses.Response;
+import com.theokanning.openai.responses.ResponseCreateRequest;
 import com.theokanning.openai.embedding.EmbeddingRequest;
 import com.theokanning.openai.embedding.EmbeddingResult;
 import com.theokanning.openai.file.File;
@@ -76,6 +78,9 @@ public interface OpenAiApi {
     @Streaming
     @POST("chat/completions")
     Call<ResponseBody> createChatCompletionStream(@Body ChatCompletionRequest request);
+
+    @POST("responses")
+    Single<Response> createResponse(@Body ResponseCreateRequest request);
 
 
     @POST("embeddings")

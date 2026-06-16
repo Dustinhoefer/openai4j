@@ -37,6 +37,8 @@ import com.theokanning.openai.completion.CompletionChunk;
 import com.theokanning.openai.completion.CompletionRequest;
 import com.theokanning.openai.completion.CompletionResult;
 import com.theokanning.openai.completion.chat.*;
+import com.theokanning.openai.responses.Response;
+import com.theokanning.openai.responses.ResponseCreateRequest;
 import com.theokanning.openai.embedding.EmbeddingRequest;
 import com.theokanning.openai.embedding.EmbeddingResult;
 import com.theokanning.openai.file.File;
@@ -189,6 +191,10 @@ public class OpenAiService {
 
     public ChatCompletionResult createChatCompletion(ChatCompletionRequest request) {
         return execute(api.createChatCompletion(request));
+    }
+
+    public Response createResponse(ResponseCreateRequest request) {
+        return execute(api.createResponse(request));
     }
 
     public Flowable<ChatCompletionChunk> streamChatCompletion(ChatCompletionRequest request) {
