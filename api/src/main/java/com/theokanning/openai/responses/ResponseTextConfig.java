@@ -1,7 +1,5 @@
 package com.theokanning.openai.responses;
 
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import com.theokanning.openai.completion.chat.ChatResponseFormat;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -15,8 +13,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class ResponseTextConfig {
-    @JsonSerialize(using = ChatResponseFormat.ChatResponseFormatSerializer.class)
-    ChatResponseFormat format;
+    ResponseTextFormat format;
 
     String verbosity;
 }
